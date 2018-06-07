@@ -12,7 +12,13 @@ class DisplayTable extends Component {
 
 	render() {
 		const planetRows = this.props.displayData.map(planet => {
-			const terrain = planet.terrain;
+			planet.terrain = planet.terrain.split(', ');
+			const terrainItems = planet.terrain.map(i => {
+				return <div key={i}>{i}</div>;
+			});
+			const filmItems = planet.films.map(i => {
+				return <div key={i}>{i}</div>;
+			});
 
 			return (
 				<tr key={planet.name}>
@@ -21,8 +27,8 @@ class DisplayTable extends Component {
 					<td>{planet.diameter}</td>
 					<td>{planet.rotation_period}</td>
 					<td>{planet.orbital_period}</td>
-					<td>{terrain}</td>
-					<td>{planet.films}</td>
+					<td>{terrainItems}</td>
+					<td>{filmItems}</td>
 				</tr>
 			);
 		});

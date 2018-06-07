@@ -146,7 +146,7 @@ class App extends Component {
       <div className="main-container">
         <header id="header">
           <h2>Lonely Planets</h2>
-          <p>A guide to the planets of Star Wars</p>
+          <p>Data on the planets of Star Wars</p>
         </header>
 
         <SearchBar 

@@ -50,6 +50,11 @@ main-container, search-bar
 	border-left: none;
 }
 
+.form-inline
+{
+	margin-left: 10px;
+}
+
 /*----------------------------------*/
 /*---------- Table Styles ----------*/
 /*----------------------------------*/
