@@ -11,7 +11,7 @@ class App extends Component {
     pendingSearch: "",
     planetsToDisplay: [],
     currentPage: 1,
-    sortOrder: null,
+    sortOrder: 'descending',
   }
 
   films = {
@@ -87,30 +87,54 @@ class App extends Component {
       }
     });
 
-    return Promise.resolve(processedData)
+    return Promise.resolve(processedData);
   }
 
-  sortPlanets = (attribute, order) => {
+  sortPlanets = attribute => {
     const sortedPlanets = this.state.planetsToDisplay.sort((a, b) => {
       let attributeA = a[attribute];
       let attributeB = b[attribute];
-      if(attribute === 'name') {
+
+      if(attributeA === 'unknown') attributeA = 0;
+      if(attributeB === 'unknown') attributeB = 0;
+
+      if(attribute === 'name') { 
         attributeA.toUpperCase();
         attributeB.toUpperCase();
+
+        let comparison = 0;
+        if (attributeA > attributeB) {
+          comparison = 1;
+        } else if (attributeA < attributeB) {
+          comparison = -1;
+        }
+
+        if(this.state.sortOrder === 'descending') {
+        this.setState({
+          sortOrder: 'ascending'
+        });
+          return comparison;
+        } else {
+          this.setState({
+            sortOrder: 'descending'
+          });
+          return comparison * -1;
+        }
       }
 
-      let comparison = 0;
-      if (attributeA > attributeB) {
-        comparison = 1;
-      } else if (attributeA < attributeB) {
-        comparison = -1;
+      if(this.state.sortOrder === 'descending') {
+        this.setState({
+          sortOrder: 'ascending'
+        });
+        // return comparison;
+        return attributeA - attributeB;
+      } else {
+        this.setState({
+          sortOrder: 'descending'
+        });
+        // return comparison * -1;
+        return attributeB - attributeA;
       }
-
-      
-      return comparison;
-      
-      // invert order
-      // return comparison * -1;
     });
     this.setState({
       planetsToDisplay: sortedPlanets

@@ -5,8 +5,8 @@
 
 body 
 {
-  margin: 0;
-  padding: 0;
+  margin     : 0;
+  padding    : 0;
   font-family: sans-serif;
 }
 
@@ -17,34 +17,42 @@ main-container, search-bar
 
 #header
 {
-	background: #22192d;
-	color: #fff;
-	padding: 40px 0;
-	display: flex;
-	flex-direction: column;
+	background     : #22192d;
+	color          : #fff;
+	padding        : 40px 0;
+	display        : flex;
+	flex-direction : column;
 	justify-content: center;
-	align-items: center;
+	align-items    : center;
 }
+
+/*---------------------------------------*/
+/*---------- Search Bar Styles ----------*/
+/*---------------------------------------*/
 
 .search-bar
 {
-	background: #e5e5e5;
-	display: flex;
+	background     : #e5e5e5;
+	display        : flex;
 	justify-content: center;
-	padding: 10px 0 10px 10px;
-	margin-bottom: 20px;
+	padding        : 10px 0 10px 10px;
+	margin-bottom  : 20px;
 }
 
 .search-bar #basic-addon1
 {
 	background: #fff;
-	color: #e5e5e5;
+	color     : #e5e5e5;
 }
 
 .search-bar #search-box
 {
 	border-left: none;
 }
+
+/*----------------------------------*/
+/*---------- Table Styles ----------*/
+/*----------------------------------*/
 
 .table-container
 {
@@ -54,8 +62,8 @@ main-container, search-bar
 #table-head
 {
 	background: #1cb9f2;
-	color: #fff;
-	cursor: pointer;
+	color     : #fff;
+	cursor    : pointer;
 }
 
 tbody
@@ -65,28 +73,41 @@ tbody
 
 #table-topper
 {
-	width: 100%;
-	height: 10px;
-	background: #1cb9f2;
+	width                  : 100%;
+	height                 : 10px;
+	background             : #1cb9f2;
 	border-top-right-radius: 0.75rem;
-	border-top-left-radius: 0.75rem;
+	border-top-left-radius : 0.75rem;
 }
 
 #table-footer
 {
-	width: 100%;
-	height: 20px;
-	margin-top: -20px;
-	background: #e5e5e5;
+	width                     : 100%;
+	height                    : 20px;
+	margin-top                : -20px;
+	background                : #e5e5e5;
 	border-bottom-right-radius: 0.75rem;
-	border-bottom-left-radius: 0.75rem;
+	border-bottom-left-radius : 0.75rem;
 }
 
 .table-pagination
 {
-	display: flex;
+	display        : flex;
 	justify-content: center;
 }
+
+#terrain, 
+#films, 
+tr td:nth-child(6), 
+tr td:nth-child(7)
+{
+	display   : none;
+	visibility: hidden;
+}
+
+/*-----------------------------------*/
+/*---------- Media Queries ----------*/
+/*-----------------------------------*/
 
 @media only screen and (min-width: 768px)
 {
@@ -98,5 +119,27 @@ tbody
 	.table-pagination
 	{
 		justify-content: flex-end;
+	}
+}
+
+@media only screen and (min-width: 736px)
+{
+	#terrain, 
+	tr td:nth-child(6)
+	{
+		display   : table-cell;
+		visibility: visible;
+	}
+}
+
+@media only screen and (min-width: 890px)
+{
+	#films, 
+	#terrain, 
+	tr td:nth-child(6), 
+	tr td:nth-child(7)
+	{
+		display   : table-cell;
+		visibility: visible;
 	}
 }

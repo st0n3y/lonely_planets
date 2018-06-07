@@ -38,9 +38,9 @@ class DisplayTable extends Component {
 					      <th scope="col" onClick={() => this.props.sortPlanets('population')}>POPULATION</th>
 					      <th scope="col" onClick={() => this.props.sortPlanets('diameter')}>DIAMETER</th>
 					      <th scope="col" onClick={() => this.props.sortPlanets('rotation_period')}>ROTATION PERIOD</th>
-					      <th scope="col" onClick={() => this.props.sortPlanets('orbit_period')}>ORBITAL PERIOD</th>
-					      <th scope="col">TERRAIN</th>
-					      <th scope="col">FILMS</th>
+					      <th scope="col" onClick={() => this.props.sortPlanets('orbital_period')}>ORBITAL PERIOD</th>
+					      <th scope="col" id="terrain">TERRAIN</th>
+					      <th scope="col" id="films">FILMS</th>
 					    </tr>
 					  </thead>
 					  <tbody>
