@@ -70,7 +70,7 @@ class App extends Component {
     }
   }
 
-  formatPlanetObjects = data => {
+  formatPlanetObjects = data => { // Strips out any data that will not be displayed in the table
     const processedData = data.map(planet => {
       const filmTitles = planet.films.map(film => {
         return this.films[film];
@@ -122,17 +122,16 @@ class App extends Component {
         }
       }
 
+      // Integer values require a different sort to planet names
       if(this.state.sortOrder === 'descending') {
         this.setState({
           sortOrder: 'ascending'
         });
-        // return comparison;
         return attributeA - attributeB;
       } else {
         this.setState({
           sortOrder: 'descending'
         });
-        // return comparison * -1;
         return attributeB - attributeA;
       }
     });

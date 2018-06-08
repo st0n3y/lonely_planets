@@ -69,6 +69,7 @@ main-container, search-bar
 	background: #1cb9f2;
 	color     : #fff;
 	cursor    : pointer;
+	border-top: 2px solid #1cb9f2;
 }
 
 tbody
@@ -101,8 +102,14 @@ tbody
 	justify-content: center;
 }
 
+#diameter,
+#rotation,
+#orbit,
 #terrain, 
-#films, 
+#films,
+tr td:nth-child(3),
+tr td:nth-child(4),
+tr td:nth-child(5), 
 tr td:nth-child(6), 
 tr td:nth-child(7)
 {
@@ -114,16 +121,33 @@ tr td:nth-child(7)
 /*---------- Media Queries ----------*/
 /*-----------------------------------*/
 
-@media only screen and (min-width: 768px)
+@media only screen and (min-width: 424px)
 {
-	.search-bar
+	#diameter, 
+	tr td:nth-child(3)
 	{
-		justify-content: flex-start;
+		display   : table-cell;
+		visibility: visible;
 	}
+}
 
-	.table-pagination
+@media only screen and (min-width: 532px)
+{
+	#rotation, 
+	tr td:nth-child(4)
 	{
-		justify-content: flex-end;
+		display   : table-cell;
+		visibility: visible;
+	}
+}
+
+@media only screen and (min-width: 626px)
+{
+	#orbit, 
+	tr td:nth-child(5)
+	{
+		display   : table-cell;
+		visibility: visible;
 	}
 }
 
@@ -134,6 +158,19 @@ tr td:nth-child(7)
 	{
 		display   : table-cell;
 		visibility: visible;
+	}
+}
+
+@media only screen and (min-width: 768px)
+{
+	.search-bar
+	{
+		justify-content: flex-start;
+	}
+
+	.table-pagination
+	{
+		justify-content: flex-end;
 	}
 }
 

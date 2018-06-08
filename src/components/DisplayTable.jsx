@@ -12,13 +12,17 @@ class DisplayTable extends Component {
 
 	render() {
 		const planetRows = this.props.displayData.map(planet => {
-			planet.terrain = planet.terrain.split(', ');
-			const terrainItems = planet.terrain.map(i => {
-				return <div key={i}>{i}</div>;
-			});
-			const filmItems = planet.films.map(i => {
-				return <div key={i}>{i}</div>;
-			});
+			let terrainItems;
+			let filmItems;
+			if(planet.terrain && planet.films) {
+				const planetTerrain = planet.terrain.split(', ');
+				terrainItems = planetTerrain.map(i => {
+					return <div key={i}>{i}</div>;
+				});
+				filmItems = planet.films.map(i => {
+					return <div key={i}>{i}</div>;
+				});
+			}
 
 			return (
 				<tr key={planet.name}>
@@ -27,8 +31,8 @@ class DisplayTable extends Component {
 					<td>{planet.diameter}</td>
 					<td>{planet.rotation_period}</td>
 					<td>{planet.orbital_period}</td>
-					<td>{terrainItems}</td>
-					<td>{filmItems}</td>
+					<td>{terrainItems || planet.terrain}</td>
+					<td>{filmItems || planet.films}</td>
 				</tr>
 			);
 		});
@@ -40,13 +44,46 @@ class DisplayTable extends Component {
 					<Table id="data-table">
 					  <thead id="table-head">
 					    <tr>
-					      <th scope="col" onClick={() => this.props.sortPlanets('name')}>NAME</th>
-					      <th scope="col" onClick={() => this.props.sortPlanets('population')}>POPULATION</th>
-					      <th scope="col" onClick={() => this.props.sortPlanets('diameter')}>DIAMETER</th>
-					      <th scope="col" onClick={() => this.props.sortPlanets('rotation_period')}>ROTATION PERIOD</th>
-					      <th scope="col" onClick={() => this.props.sortPlanets('orbital_period')}>ORBITAL PERIOD</th>
-					      <th scope="col" id="terrain">TERRAIN</th>
-					      <th scope="col" id="films">FILMS</th>
+					      <th 
+					      	scope="col" 
+					      	id="name" 
+					      	onClick={() => this.props.sortPlanets('name')}>
+					      	NAME
+					      </th>
+					      <th 
+					      	scope="col" 
+					      	id="population" 
+					      	onClick={() => this.props.sortPlanets('population')}>
+					      	POPULATION
+					      </th>
+					      <th 
+					      	scope="col" 
+					      	id="diameter" 
+					      	onClick={() => this.props.sortPlanets('diameter')}>
+					      	DIAMETER
+					      </th>
+					      <th 
+					      	scope="col" 
+					      	id="rotation" 
+					      	onClick={() => this.props.sortPlanets('rotation_period')}>
+					      	ROTATION PERIOD
+					      </th>
+					      <th 
+					      	scope="col" 
+					      	id="orbit" 
+					      	onClick={() => this.props.sortPlanets('orbital_period')}>
+					      	ORBITAL PERIOD
+					      </th>
+					      <th 
+					      	scope="col" 
+					      	id="terrain">
+					      	TERRAIN
+					      </th>
+					      <th 
+					      	scope="col" 
+					      	id="films">
+					      	FILMS
+					      </th>
 					    </tr>
 					  </thead>
 					  <tbody>
