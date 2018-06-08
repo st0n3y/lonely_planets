@@ -15,6 +15,10 @@ main-container, search-bar
 	display: flex;
 }
 
+/*-----------------------------------*/
+/*---------- Header Styles ----------*/
+/*-----------------------------------*/
+
 #header
 {
 	background     : #22192d;
@@ -96,12 +100,53 @@ tbody
 	border-bottom-left-radius : 0.75rem;
 }
 
+/*---------------------------------------*/
+/*---------- Pagination Styles ----------*/
+/*---------------------------------------*/
+
 .table-pagination
 {
 	display        : flex;
 	justify-content: center;
 }
 
+.pagination-controls
+{
+	display        : flex;
+	justify-content: space-between;
+	width          : 20rem;
+	list-style-type: none;
+	margin-right   : 30px;
+}
+
+.pagination-item
+{
+	cursor         : pointer;
+	width          : 25px;
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+}
+
+.pagination-item.active
+{
+	background: #e5e5e5;
+	border-radius: 50%;
+}
+
+.pagination-item.disabled
+{
+	cursor: default;
+	color : #e5e5e5;
+}
+
+.pagination-link
+{
+	display: table-cell;
+    vertical-align: middle;
+}
+
+/*Hide these columns by default (i.e. in mobile view)*/
 #diameter,
 #rotation,
 #orbit,
@@ -121,6 +166,7 @@ tr td:nth-child(7)
 /*---------- Media Queries ----------*/
 /*-----------------------------------*/
 
+/*Reveal more columns on wider screens*/
 @media only screen and (min-width: 424px)
 {
 	#diameter, 
@@ -161,6 +207,18 @@ tr td:nth-child(7)
 	}
 }
 
+@media only screen and (min-width: 890px)
+{
+	#films, 
+	#terrain, 
+	tr td:nth-child(6), 
+	tr td:nth-child(7)
+	{
+		display   : table-cell;
+		visibility: visible;
+	}
+}
+
 @media only screen and (min-width: 768px)
 {
 	.search-bar
@@ -172,16 +230,9 @@ tr td:nth-child(7)
 	{
 		justify-content: flex-end;
 	}
-}
 
-@media only screen and (min-width: 890px)
-{
-	#films, 
-	#terrain, 
-	tr td:nth-child(6), 
-	tr td:nth-child(7)
+	.pagination-controls
 	{
-		display   : table-cell;
-		visibility: visible;
+		width: 30rem;
 	}
 }

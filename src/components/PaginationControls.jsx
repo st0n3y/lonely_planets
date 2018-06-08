@@ -6,50 +6,56 @@ class PaginationControls extends Component {
 		return (
 			<div className="table-pagination">
 		        <nav className="my-4 pt-2">
-		            <ul className="pagination pagination-circle pg-grey mb-0">
+		            <ul className="pagination-controls">
 
-		                <li className={`page-item clearfix d-none d-md-block ${this.props.currentPage === 1 ? 'disabled' : ''}`}>
-		                	<a className="page-link" onClick={() => this.props.handlePageChange(1)}>First</a>
+		                <li className={`pagination-item clearfix d-none d-md-block ${this.props.currentPage === 1 ? 'disabled' : ''}`}>
+		                	<a className="pagination-link" onClick={() => this.props.handlePageChange(1)}>First</a>
 		                </li>
 
-		                <li className={`page-item ${this.props.currentPage === 1 ? 'disabled' : ''}`}>
-		                    <a className="page-link" aria-label="Previous" onClick={() => this.props.handlePageChange(this.props.currentPage - 1)}>
-		                    <span aria-hidden="true">&laquo;</span>
+		                <li className={`pagination-item ${this.props.currentPage === 1 ? 'disabled' : ''}`}>
+		                    <a 
+		                    	className="pagination-link" 
+		                    	aria-label="Previous" 
+		                    	onClick={() => this.props.handlePageChange(this.props.currentPage - 1)}>
+		                    <span aria-hidden="true"><i class="fas fa-caret-left"></i></span>
 		                    <span className="sr-only">Previous</span>
 		                </a>
 		                </li>
 						
-		                <li className={this.props.currentPage === 1 ? "page-item active" : "page-item"}>
-		                	<a className="page-link" onClick={() => this.props.handlePageChange(1)}>1</a>
+		                <li className={this.props.currentPage === 1 ? "pagination-item active" : "pagination-item"}>
+		                	<a className="pagination-link" onClick={() => this.props.handlePageChange(1)}>1</a>
 		                </li>
-		                <li className={this.props.currentPage === 2 ? "page-item active" : "page-item"}>
-		                	<a className="page-link" onClick={() => this.props.handlePageChange(2)}>2</a>
+		                <li className={this.props.currentPage === 2 ? "pagination-item active" : "pagination-item"}>
+		                	<a className="pagination-link" onClick={() => this.props.handlePageChange(2)}>2</a>
 		                </li>
-		                <li className={this.props.currentPage === 3 ? "page-item active" : "page-item"}>
-		                	<a className="page-link" onClick={() => this.props.handlePageChange(3)}>3</a>
+		                <li className={this.props.currentPage === 3 ? "pagination-item active" : "pagination-item"}>
+		                	<a className="pagination-link" onClick={() => this.props.handlePageChange(3)}>3</a>
 		                </li>
-		                <li className={this.props.currentPage === 4 ? "page-item active" : "page-item"}>
-		                	<a className="page-link" onClick={() => this.props.handlePageChange(4)}>4</a>
+		                <li className={this.props.currentPage === 4 ? "pagination-item active" : "pagination-item"}>
+		                	<a className="pagination-link" onClick={() => this.props.handlePageChange(4)}>4</a>
 		                </li>
-		                <li className={this.props.currentPage === 5 ? "page-item active" : "page-item"}>
-		                	<a className="page-link" onClick={() => this.props.handlePageChange(5)}>5</a>
+		                <li className={this.props.currentPage === 5 ? "pagination-item active" : "pagination-item"}>
+		                	<a className="pagination-link" onClick={() => this.props.handlePageChange(5)}>5</a>
 		                </li>
-		                <li className={this.props.currentPage === 6 ? "page-item active" : "page-item"}>
-		                	<a className="page-link" onClick={() => this.props.handlePageChange(6)}>6</a>
+		                <li className={this.props.currentPage === 6 ? "pagination-item active" : "pagination-item"}>
+		                	<a className="pagination-link" onClick={() => this.props.handlePageChange(6)}>6</a>
 		                </li>
-		                <li className={this.props.currentPage === 7 ? "page-item active" : "page-item"}>
-		                	<a className="page-link" onClick={() => this.props.handlePageChange(7)}>7</a>
+		                <li className={this.props.currentPage === 7 ? "pagination-item active" : "pagination-item"}>
+		                	<a className="pagination-link" onClick={() => this.props.handlePageChange(7)}>7</a>
 		                </li>
 
-		                <li className={`page-item ${this.props.currentPage === 7 ? 'disabled' : ''}`}>
-		                    <a className="page-link" aria-label="Next" onClick={() => this.props.handlePageChange(this.props.currentPage + 1)}>
-		                    <span aria-hidden="true">&raquo;</span>
+		                <li className={`pagination-item ${this.props.currentPage === 7 ? 'disabled' : ''}`}>
+		                    <a 
+		                    	className="pagination-link" 
+		                    	aria-label="Next" 
+		                    	onClick={() => this.props.handlePageChange(this.props.currentPage + 1)}>
+		                    <span aria-hidden="true"><i class="fas fa-caret-right"></i></span>
 		                    <span className="sr-only">Next</span>
 		                </a>
 		                </li>
 
-		                <li className={`page-item clearfix d-none d-md-block ${this.props.currentPage === 7 ? 'disabled' : ''}`}>
-		                	<a className="page-link" onClick={() => this.props.handlePageChange(7)}>Last</a>
+		                <li className={`pagination-item clearfix d-none d-md-block ${this.props.currentPage === 7 ? 'disabled' : ''}`}>
+		                	<a className="pagination-link" onClick={() => this.props.handlePageChange(7)}>Last</a>
 		                </li>
 
 		            </ul>
