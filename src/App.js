@@ -62,7 +62,7 @@ class App extends Component {
   }
 
   handlePageChange = (page) => {
-    if(page !== this.state.currentPage) {
+    if(page !== this.state.currentPage && page > 0 && page < 8) {
       this.requestData(page);
       this.setState({
         currentPage: page
