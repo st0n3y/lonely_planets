@@ -41,7 +41,7 @@ class App extends Component {
           planetsToDisplay: processedData
         });
       })
-      .catch(err => console.error("There was a problem", err.message));
+      .catch(err => console.error("There was a problem: ", err.message));
   }
 
   handleSearchInput = e => {

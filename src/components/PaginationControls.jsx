@@ -17,7 +17,7 @@ class PaginationControls extends Component {
 		                    	className="pagination-link" 
 		                    	aria-label="Previous" 
 		                    	onClick={() => this.props.handlePageChange(this.props.currentPage - 1)}>
-		                    <span aria-hidden="true"><i class="fas fa-caret-left"></i></span>
+		                    <span aria-hidden="true"><i className="fas fa-caret-left"></i></span>
 		                    <span className="sr-only">Previous</span>
 		                </a>
 		                </li>
@@ -49,7 +49,7 @@ class PaginationControls extends Component {
 		                    	className="pagination-link" 
 		                    	aria-label="Next" 
 		                    	onClick={() => this.props.handlePageChange(this.props.currentPage + 1)}>
-		                    <span aria-hidden="true"><i class="fas fa-caret-right"></i></span>
+		                    <span aria-hidden="true"><i className="fas fa-caret-right"></i></span>
 		                    <span className="sr-only">Next</span>
 		                </a>
 		                </li>
