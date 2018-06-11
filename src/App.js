@@ -98,6 +98,7 @@ class App extends Component {
       if(attributeA === 'unknown') attributeA = 0;
       if(attributeB === 'unknown') attributeB = 0;
 
+      // Sorting by alphabetical order for planet names
       if(attribute === 'name') { 
         attributeA.toUpperCase();
         attributeB.toUpperCase();
@@ -122,7 +123,7 @@ class App extends Component {
         }
       }
 
-      // Integer values require a different sort to planet names
+      // Sorting by integer size for numerical values
       if(this.state.sortOrder === 'descending') {
         this.setState({
           sortOrder: 'ascending'
