@@ -15,3 +15,10 @@ it('renders the title and description', () => {
 	expect(wrapper.contains(title)).toEqual(true);
 	expect(wrapper.contains(description)).toEqual(true);
 });
+
+it('calls the root API route on mount', () => {
+	const spy = jest.spyOn(global, 'fetch');
+	shallow(<App />);
+
+	expect(spy).toBeCalledWith('https://swapi.co/api/planets/');
+});
